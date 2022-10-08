@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/gestionstock?createDatabaseIfNotExist=true&useUnicode=true&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    password:
+
+  jpa:
+    database: MYSQL
+    generate-ddl: 'true'
+    properties:
+      hibernate:
+        ejb:
+          interceptor: com.gaaloul.gestiondestock.interceptor.Interceptor
+
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      ddl-auto: update
+
+
+    show-sql: 'false'
+
+
+
+
+
+
+    server:
+      port: 8081
+
+
+    flickr:
+      apiKey : ffb5dde7ae207966c25094d50c735374
+      apiSecret: 1a680974316268ff
+      appKey: 72157720845353063-933f6930308fbf28
+      appSecret: 00333367d3f7a81b
+
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
